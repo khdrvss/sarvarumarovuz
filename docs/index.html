@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarvar Umarov — Savdo Tizimlari va Treninglar</title>
+  <meta name="description" content="Sarvar Umarov: savdo tizimlari, jamoa treninglari, qo‘ng‘iroq skriptlari, CRM sozlash va 1:1 mentorlik." />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Worker API endpoint placeholder; replace with your workers.dev URL -->
+  <script>
+    // Cloudflare Worker API base for lead form submissions
+    window.LEAD_API = 'https://sarvar.saidxon3105.workers.dev';
+  </script>
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <div class="logo">SU</div>
+      <div class="brand-text">
+        <h1>Sarvar Umarov</h1>
+        <p>Savdo Tizimlari & Trening</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Xizmatlar</a>
+      <a href="#courses">Kurslar</a>
+      <a href="#lead">Bog‘lanish</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Ko‘chmas mulk jamoalari uchun Savdo Tizimlari va Treninglar</h2>
+          <p>Skriptlar, tizimlar va yetakchilik. Natijalar haftaning o‘zidayoq.</p>
+          <button id="ctaBtn" class="btn btn-primary">Konsultatsiya so‘rash</button>
+        </div>
+        <div class="hero-card">
+          <div class="quote">“Savdo — omad emas. Bu takrorlanuvchi tizimlar va kundalik o‘lchovlar.”</div>
+          <div class="author">— Sarvar Umarov</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container section">
+      <h3 class="section-title">Nimalar qilaman</h3>
+      <div class="chips">
+        <span class="chip">Savdo tizimlari</span>
+        <span class="chip">Jamoa tayyorlash</span>
+        <span class="chip">Qo‘ng‘iroq skriptlari</span>
+        <span class="chip">CRM sozlash</span>
+        <span class="chip">1:1 mentorlik</span>
+      </div>
+    </section>
+
+    <section id="courses" class="container section">
+      <h3 class="section-title">Dasturlar va Kurslar</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Ko‘chmas Mulk Savdo Tizimi</h4>
+          <p>Barqaror savdolar uchun bosqichma-bosqich jarayon. KPI jadvallari, skriptlar, uchrashuv ritmlari.</p>
+          <button class="btn btn-outline request-btn" data-course="Ko‘chmas Mulk Savdo Tizimi">So‘rash</button>
+        </article>
+        <article class="card">
+          <h4>Jamoa Intensivi</h4>
+          <p>2-haftalik bootcamp: kundalik drilllar, qo‘ng‘iroqlar tahlili, e’tirozlar bilan ishlash, roleplay.</p>
+          <button class="btn btn-outline request-btn" data-course="Jamoa Intensivi">So‘rash</button>
+        </article>
+        <article class="card">
+          <h4>1:1 Mentorlik</h4>
+          <p>Rahbarlar va top agentlar uchun shaxsiy mentorlik: strategiya, javobgarlik, performance review.</p>
+          <button class="btn btn-outline request-btn" data-course="1:1 Mentorlik">So‘rash</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="lead" class="container section">
+      <h3 class="section-title">Qo‘ng‘iroq so‘rash</h3>
+      <form id="leadForm" novalidate>
+        <div class="grid">
+          <label>
+            <span>Ism familiya *</span>
+            <input type="text" name="name" placeholder="Ism familiya *" required minlength="2" />
+          </label>
+          <label>
+            <span>Telefon *</span>
+            <input type="tel" name="phone" placeholder="+998 XX XXX XX XX *" required pattern="^\+?[0-9\s()-]{6,}$" />
+          </label>
+          <label>
+            <span>Telegram @ *</span>
+            <input type="text" name="username" placeholder="@foydalanuvchi *" required pattern="^@?[A-Za-z0-9_]{5,}$" />
+          </label>
+          <label>
+            <span>Kompaniya (ixtiyoriy)</span>
+            <input type="text" name="company" placeholder="Kompaniya (ixtiyoriy)" minlength="2" />
+          </label>
+        </div>
+        <label>
+          <span>Xabar *</span>
+          <textarea name="message" rows="5" placeholder="Qisqa xabar" required minlength="5"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">So‘rov yuborish</button>
+          <span id="formStatus" class="muted"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>© 2025 Sarvar Umarov. Barcha huquqlar himoyalangan.</div>
+    <div class="muted">Tizim bilan ishlang, natija bilan o‘lchang.</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
