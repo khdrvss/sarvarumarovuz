@@ -1,0 +1,30 @@
+{
+  "name": "sarvar-umarov-website",
+  "version": "1.0.0",
+  "description": "Landing website for Sarvar Umarov — Sales Systems & Training. Collects leads and sends to Telegram via secure backend.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "landing",
+    "express",
+    "telegram",
+    "lead",
+    "real-estate",
+    "uzbekistan"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "undici": "^6.19.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
